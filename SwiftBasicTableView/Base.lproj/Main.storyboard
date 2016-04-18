@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mJH-3W-Akp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mJH-3W-Akp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -31,7 +30,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y9y-b6-ypy">
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y9y-b6-ypy" customClass="RatingControl" customModule="SwiftBasicTableView" customModuleProvider="target">
                                             <rect key="frame" x="98" y="37" width="240" height="44"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
@@ -40,7 +39,7 @@
                                 <connections>
                                     <outlet property="img_meal" destination="6AF-XW-XzR" id="PSn-09-fKH"/>
                                     <outlet property="lb_name" destination="du6-SE-Xhq" id="sHT-hO-n6I"/>
-                                    <outlet property="v_rating" destination="Y9y-b6-ypy" id="W1a-lu-knh"/>
+                                    <outlet property="v_rating" destination="Y9y-b6-ypy" id="zvs-ax-BF8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -66,11 +65,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hcC-nd-0JX">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hcC-nd-0JX">
                                 <rect key="frame" x="20" y="80" width="560" height="493"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="84" placeholderIntrinsicHeight="21" text="Meal name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grk-ph-Ka9">
-                                        <rect key="frame" x="0.0" y="0.0" width="84" height="21"/>
+                                        <rect key="frame" x="238" y="0.0" width="84" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -81,24 +80,21 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgq-Kr-eOv">
-                                        <rect key="frame" x="0.0" y="75" width="158" height="30"/>
+                                        <rect key="frame" x="201" y="75" width="158" height="30"/>
                                         <state key="normal" title="Set Default Meal Name"/>
                                         <connections>
                                             <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YGF-jJ-oaS"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="cd3-3l-CMY">
-                                        <rect key="frame" x="0.0" y="117" width="320" height="320"/>
+                                        <rect key="frame" x="120" y="117" width="320" height="320"/>
                                         <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="cd3-3l-CMY" secondAttribute="height" multiplier="1:1" id="2t9-Ur-RAM"/>
-                                        </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="lQq-br-eQm" appends="YES" id="Gs9-Tb-7Nh"/>
                                         </connections>
                                     </imageView>
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="qFF-7M-aql">
-                                        <rect key="frame" x="0.0" y="449" width="240" height="44"/>
+                                        <rect key="frame" x="160" y="449" width="240" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>

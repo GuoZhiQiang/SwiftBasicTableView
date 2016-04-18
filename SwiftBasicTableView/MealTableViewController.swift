@@ -12,7 +12,7 @@ class MealTableViewController: UITableViewController {
     
     // MARK: Properties
     
-    var arr_meal = [MealCell]()
+    var arr_meal = [Meal]()
     
 
     override func viewDidLoad() {
@@ -29,8 +29,12 @@ class MealTableViewController: UITableViewController {
         let photo1 = UIImage(named: "meal1")!
         let photo2 = UIImage(named: "meal2")!
         let photo3 = UIImage(named: "meal3")!
+        // 加入的数组的对象不能为空，所有，meal 对象后都需要加上！
+        let meal1  = Meal(name: "Food one", photo: photo1, rating: 4)!
+        let meal2  = Meal(name: "Food two", photo: photo2, rating: 5)!
+        let meal3  = Meal(name: "Food Four", photo: photo3, rating: 3)!
         
-        
+        arr_meal += [meal1,meal2,meal3]
     }
 
     // MARK: - Table view data source
@@ -50,7 +54,9 @@ class MealTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("MEAL_CELL", forIndexPath: indexPath) as!MealCell
         let meal = arr_meal[indexPath.row]
         
-        cell.lb_name = meal.lb_name
+        cell.lb_name.text    = meal.name
+        cell.img_meal.image  = meal.photo
+        cell.v_rating.rating = meal.rating
 
         return cell
     }
