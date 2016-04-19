@@ -20,6 +20,7 @@ class MealCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        v_rating.userInteractionEnabled = false
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
